@@ -1,0 +1,82 @@
+img {
+    pointer-events: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 5rem;
+
+    padding: 20rem 20% 8rem 20%;
+}
+
+@media screen and (orientation: portrait) {
+    main {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+.project {
+    background-color: var(--bg-sec);
+
+    box-sizing: border-box;
+    padding: 2rem;
+
+    border-radius: 2rem;
+
+    transition: scale 0.1s ease-in-out;
+}
+
+.project:hover {
+    scale: 1.05;
+}
+
+.project h2,
+.project p {
+    text-wrap: balance;
+}
+
+.project.center h2,
+.project.center p {
+    text-align: center;
+}
+
+.project.right h2,
+.project.right p {
+    text-align: right;
+}
+
+@media screen and (orientation: portrait) {
+    .project h2,
+    .project p {
+        text-align: center;
+    }
+}
+
+.project img {
+    width: 100%;
+    border-radius: 1rem;
+    user-select: none;
+}
+
+address a {
+    text-decoration: underline;
+}
+
+.project address p {
+    word-break: break-all;
+}

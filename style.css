@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* +
+    *Typography
+    + */
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 10px;
+    /* +
+
+    *Colors
+    + */
+    --bg-prim: rgb(50, 50, 50);
+    --bg-sec: rgba(30, 30, 30, 0.7);
+    --bg-prim-opac: rgba(0, 0, 0, 0.5);
+
+    --border-prim: rgb(90, 90, 90);
+
+    --font-prim: rgb(255, 255, 255);
+    --font-acc: rgb(65, 255, 113);
+
+    --select-bg: rgb(70, 70, 70);
+    --select-text: rgb(169, 255, 169);
+}
+
+[data-theme="light"] {
+    /* +
+    *Colors
+    + */
+    --bg-prim: rgb(255, 255, 255);
+    --bg-sec: rgb(220, 220, 220);
+    --bg-prim-opac: rgba(255, 255, 255, 0.1);
+
+    --border-prim: rgb(180, 180, 180);
+
+    --font-prim: rgb(0, 0, 0);
+    --font-acc: rgb(0, 163, 41);
+}
+
+h1,
+h2,
+h4,
+h5,
+h6,
+a,
+p {
+    color: var(--font-prim);
+
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 2dvw, 5rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(2rem, 1.5dvw, 3.75rem);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: clamp(1rem, 0.75dvw, 3rem);
+    font-weight: 700;
+}
+
+h5 {
+    font-size: clamp(3rem, 3dvw, 10rem);
+    font-weight: 700;
+}
+
+h6 {
+    font-size: clamp(4rem, 4dvw, 10rem);
+    font-weight: 900;
+}
+
+a {
+    color: var(--font-prim);
+    text-decoration: none;
+}
+
+p {
+    font-size: clamp(2rem, 1.25dvw, 4rem);
+}
+
+h1::selection,
+h2::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+a::selection,
+p::selection {
+    background-color: var(--select-bg);
+    color: var(--select-text);
+}
+
+.Accent {
+    color: var(--font-acc);
+}
+
+.Bold {
+    font-weight: 900;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-prim);
+
+    scroll-padding-top: 7rem;
+}
+
+nav {
+    background-color: var(--bg-sec);
+
+    height: 7rem;
+    width: 100%;
+
+    position: fixed;
+
+    box-sizing: border-box;
+
+    padding: 0 20%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    backdrop-filter: blur(10px);
+
+    z-index: 500;
+
+    user-select: none;
+}
+
+nav img {
+    height: 7rem;
+    pointer-events: none;
+}
+
+[data-theme="light"] nav img {
+    filter: invert(1);
+}
+
+nav h2 {
+    width: 50%;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav .menu {
+    width: 7rem;
+    height: 7rem;
+
+    position: relative;
+    display: inline-block;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav .menu svg#settings {
+    width: 80%;
+    height: 80%;
+}
+
+[data-theme="light"] nav .menu svg#settings {
+    filter: invert(1);
+}
+
+nav .menu_dropdown {
+    position: absolute;
+    background-color: var(--bg-sec);
+
+    padding: 2rem 1rem 2rem 4rem;
+
+    bottom: 0;
+    right: 0;
+
+    transform: translate(0, 100%) scale(0);
+    transform-origin: top right;
+    transition: transform 0.1s ease-in-out;
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 0 0 1rem 1rem;
+}
+
+nav .menu:hover .menu_dropdown {
+    transform: translate(0, 100%) scale(1);
+}
+
+.ThemeToggle {
+    width: 4rem;
+    height: 4rem;
+}
+
+.ThemeToggle svg {
+    position: absolute;
+}
+
+#Moon {
+    filter: invert(1);
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+#Sun {
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+}
+
+[data-theme="dark"] #Moon {
+    opacity: 1;
+}
+
+[data-theme="dark"] #Sun {
+    opacity: 0;
+}
+
+[data-theme="light"] #Moon {
+    opacity: 0;
+}
+
+[data-theme="light"] #Sun {
+    opacity: 1;
+}
+
+main {
+    background-color: transparent;
+    color: var(--font-prim);
+
+    box-sizing: border-box;
+    padding: 7rem 20% 0 20%;
+
+    min-height: calc(100dvh - 5rem);
+}
+
+footer {
+    height: 5rem;
+    background-color: transparent;
+
+    text-align: center;
+}

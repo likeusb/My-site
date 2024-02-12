@@ -1,0 +1,49 @@
+
+
+figure {
+    display: flex;
+    align-items: center;
+
+    height: calc(100dvh - 9rem);
+
+    gap: 4rem;
+}
+
+figure img {
+    border-radius: 2rem;
+}
+
+@media screen and (orientation: landscape) {
+    figure img {
+        height: 70rem;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    figure {
+        flex-direction: column;
+        justify-content: center;
+
+        gap: 5rem;
+
+        background-color: red;
+
+        height: 85dvh;
+    }    
+
+    main {
+        padding: 20rem 0 8rem 0;
+    }
+
+    figure img {
+        width: 65%;
+    }
+
+    figcaption h2 {
+        font-size: clamp(6rem, 8dvw, 16rem);
+    }
+
+    figcaption p {
+        font-size: clamp(3rem, 3dvw, 8rem);
+    }
+}

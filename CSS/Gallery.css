@@ -1,0 +1,175 @@
+:root {
+    --bg-tetr: rgb(36, 36, 36);
+}
+
+main {
+    padding: 14rem 20% 0 20%;
+}
+
+nav .menu_dropdown {
+    transform: translate(0, 100%) scale(0);
+}
+
+nav .menu:hover .menu_dropdown {
+    transform: translate(0, 100%) scale(1);
+}
+
+.PNContainer {
+    display: flex;
+    justify-content: center;
+
+    position: fixed;
+
+    top: 7rem;
+    width: 100%;
+
+    
+    transition: transform 0.3s ease;
+    
+    z-index: 499;
+}
+
+.Pagenav {
+    background-color: var(--bg-sec);
+    backdrop-filter: blur(10px);
+
+    display: flex;
+    align-items: center;
+
+    width: 70%;
+    height: 7rem;
+
+    border-radius: 0rem 0rem 2rem 2rem;
+}
+
+.Pagenav h2 {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.Outround {
+    width: 2rem;
+    height: 2rem;
+
+    background-color: var(--bg-sec);
+}
+
+.Outround::after {
+    content: '';
+
+    background-color: var(--bg-prim);
+    position: absolute;
+
+    width: 2rem;
+    height: 2rem;
+}
+
+.Outround#Left::after {
+    border-radius: 0 2rem 0 0;
+}
+
+.Outround#Right::after {
+    border-radius: 2rem 0 0 0;
+}
+
+.Section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Section hr {
+    width: 100%;
+    height: 0.2rem;
+    border: none;
+    background-color: var(--font-prim);
+    border-radius: 2rem;
+}
+
+.Section h1 {
+    padding: 0 4rem;
+    width: max-content;
+    white-space: nowrap;
+}
+
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figure img {
+    height: 50rem;
+}
+
+.figimgwrapper {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    height: 100%;
+    max-width: 40rem;
+
+    display: flex;
+    align-items: center;
+
+    transform: scale(0) translateX(100%);
+    transition: transform 0.3s ease;
+    transform-origin: left center;
+
+    padding: 0 0 0 4rem;
+}
+
+.figimgwrapper:hover .tooltip {
+    transform: scale(1) translateX(100%);
+}
+
+.tooltip p {
+    background-color: var(--bg-tetr);
+
+    position: relative;
+    padding: 2rem;
+
+    border-radius: 2rem;
+}
+
+.tooltip p::before {
+    --hintsize: 4rem;
+
+    position: absolute;
+    left: 0;
+
+    background-color: var(--bg-tetr);
+
+    width: var(--hintsize);
+    height: var(--hintsize);
+
+    top: 50%;
+    transform: translateX(-50%) rotate(45deg) translateY(-50%);
+    vertical-align: middle;
+
+    content: '';
+
+    z-index: -1;
+}
+
+figure img.vertical {
+    height: 75rem;
+}
+
+figcaption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+figcaption h1,
+figcaption p {
+    text-align: center;
+    text-wrap: balance;
+}
