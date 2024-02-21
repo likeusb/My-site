@@ -118,100 +118,161 @@ html {
     scroll-padding-top: 7rem;
 }
 
-nav {
-    background-color: var(--bg-sec);
+@media screen and (orientation: landscape) {
+    nav {
+        background-color: var(--bg-sec);
+    
+        height: 7rem;
+        width: 100%;
+    
+        position: fixed;
+    
+        box-sizing: border-box;
+    
+        padding: 0 20%;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        backdrop-filter: blur(10px);
+    
+        z-index: 500;
+    
+        user-select: none;
+    }
 
-    height: 7rem;
-    width: 100%;
+    nav img.logo {
+        width: 25rem;
+        pointer-events: none;
+    }
+    
+    nav h2 {
+        width: 50%;
+    }
+    
+    nav ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
+        width: 100%;
+    }
 
-    position: fixed;
+    nav .menu {
+        width: 7rem;
+        height: 7rem;
+    
+        position: relative;
+        display: inline-block;
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    nav .menu svg#settings {
+        width: 80%;
+        height: 80%;
+    }
+    
+    [data-theme="light"] nav .menu svg#settings {
+        filter: invert(1);
+    }
+    
+    nav .menu_dropdown {
+        position: absolute;
+        background-color: var(--bg-sec);
+    
+        padding: 2rem 1rem 2rem 4rem;
+    
+        bottom: 0;
+        right: 0;
+    
+        transform: translate(0, 100%) scale(0);
+        transform-origin: top right;
+        transition: transform 0.1s ease-in-out;
+    
+        backdrop-filter: blur(10px);
+    
+        border-radius: 0 0 1rem 1rem;
+    }
+    
+    nav .menu:hover .menu_dropdown {
+        transform: translate(0, 100%) scale(1);
+    }
 
-    box-sizing: border-box;
-
-    padding: 0 20%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    backdrop-filter: blur(10px);
-
-    z-index: 500;
-
-    user-select: none;
+    .ThemeToggle {
+        width: 4rem;
+        height: 4rem;
+    }
 }
 
-nav img {
-    height: 7rem;
-    pointer-events: none;
-}
+@media screen and (orientation: portrait){
+    nav {
+        position: fixed;
+        background-color: var(--bg-prim-opac);
+        backdrop-filter: blur(100px);
+    
+        height: 100%;
+    
+        box-sizing: border-box;
+        padding: 5rem 5rem;
+    
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    
+        z-index: 5;
+    }
+    
+    nav img.logo {
+        width: 25rem;
+        pointer-events: none;
+    }
 
-[data-theme="light"] nav img {
-    filter: invert(1);
-}
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    
+    nav h2 {
+        font-size: clamp(4rem, 4dvw, 10rem);
+    }
 
-nav h2 {
-    width: 50%;
-}
+    nav ul li {
+        text-align: center;
+    }
 
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    nav .menu svg#settings {
+        scale: 0;
+    }
 
-    width: 100%;
+    nav .menu_dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    nav .menu_dropdown svg {
+        height: 8rem;
+        width: 8rem;
+    }
+
+    .ThemeToggle {
+        width: 8rem;
+        height: 8rem;
+    }
 }
 
 nav ul li {
     list-style: none;
 }
 
-nav .menu {
-    width: 7rem;
-    height: 7rem;
-
-    position: relative;
-    display: inline-block;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-nav .menu svg#settings {
-    width: 80%;
-    height: 80%;
-}
-
-[data-theme="light"] nav .menu svg#settings {
+[data-theme="light"] nav img {
     filter: invert(1);
-}
-
-nav .menu_dropdown {
-    position: absolute;
-    background-color: var(--bg-sec);
-
-    padding: 2rem 1rem 2rem 4rem;
-
-    bottom: 0;
-    right: 0;
-
-    transform: translate(0, 100%) scale(0);
-    transform-origin: top right;
-    transition: transform 0.1s ease-in-out;
-
-    backdrop-filter: blur(10px);
-
-    border-radius: 0 0 1rem 1rem;
-}
-
-nav .menu:hover .menu_dropdown {
-    transform: translate(0, 100%) scale(1);
-}
-
-.ThemeToggle {
-    width: 4rem;
-    height: 4rem;
 }
 
 .ThemeToggle svg {
