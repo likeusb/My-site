@@ -26,8 +26,6 @@ figure img {
 
         gap: 5rem;
 
-        background-color: red;
-
         height: 85dvh;
     }    
 
@@ -36,14 +34,16 @@ figure img {
     }
 
     figure img {
-        width: 65%;
+        width: 50%;
     }
 
     figcaption h2 {
-        font-size: clamp(6rem, 8dvw, 16rem);
+        font-size: clamp(3.5rem, 4.5dvw, 10rem);
+        text-align: center;
     }
 
     figcaption p {
-        font-size: clamp(3rem, 3dvw, 8rem);
+        font-size: clamp(3rem, 2.5dvw, 8rem);
+        text-align: center;
     }
 }

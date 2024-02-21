@@ -3,7 +3,7 @@
 }
 
 main {
-    padding: 14rem 20% 0 20%;
+    padding: 14rem 20% 7rem 20%;
 }
 
 nav .menu_dropdown {
@@ -20,7 +20,9 @@ nav .menu:hover .menu_dropdown {
 
     position: fixed;
 
-    top: 7rem;
+    background-color: antiquewhite;
+
+    /* top: 7rem; */
     width: 100%;
 
     

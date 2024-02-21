@@ -11,13 +11,6 @@ main {
     padding: 20rem 20% 8rem 20%;
 }
 
-@media screen and (orientation: portrait) {
-    main {
-        grid-template-rows: repeat(3, 1fr);
-        grid-template-columns: 1fr;
-    }
-}
-
 @media screen and (max-width: 1600px) {
     main {
         grid-template-columns: repeat(2, 1fr);
@@ -26,6 +19,13 @@ main {
 
 @media screen and (max-width: 1000px) {
     main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    main {
+        grid-template-rows: repeat(3, 1fr);
         grid-template-columns: 1fr;
     }
 }
@@ -62,7 +62,9 @@ main {
 
 @media screen and (orientation: portrait) {
     .project h2,
-    .project p {
+    .project p,
+    .project.right h2,
+    .project.right p {
         text-align: center;
     }
 }
