@@ -133,6 +133,24 @@ figure img {
     height: 50rem;
 }
 
+figure img.vertical {
+    height: 75rem;
+}
+
+@media screen and (orientation: portrait){
+    figure img {
+        max-width: 75rem;
+        width: 100%;
+        height: auto;
+    }
+
+    figure img.vertical {
+        max-width: 50rem;
+        width: 100%;
+        height: auto;
+    }
+}
+
 .figimgwrapper {
     position: relative;
 }
@@ -186,10 +204,6 @@ figure img {
     content: '';
 
     z-index: -1;
-}
-
-figure img.vertical {
-    height: 75rem;
 }
 
 figcaption {
