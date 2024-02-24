@@ -54,6 +54,13 @@ nav .menu:hover .menu_dropdown {
     border-radius: 0rem 0rem 2rem 2rem;
 }
 
+@media screen and (orientation: portrait) {
+    .Pagenav {
+        width: 100%;
+        border-radius: 0;
+    }
+}
+
 .Pagenav h2 {
     display: flex;
     justify-content: space-evenly;
@@ -75,6 +82,13 @@ nav .menu:hover .menu_dropdown {
 
     width: 2rem;
     height: 2rem;
+}
+
+@media screen and (orientation: portrait) {
+    .Outround {
+        display: none;
+    }
+    
 }
 
 .Outround#Left::after {
