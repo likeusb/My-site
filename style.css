@@ -140,6 +140,8 @@ html {
         z-index: 500;
     
         user-select: none;
+
+        transform: translateX(0);
     }
 
     nav .door {
@@ -234,6 +236,10 @@ html {
         transition: transform 0.25s ease-in-out;
     }
 
+    nav.open {
+        transform: translateX(0);
+    }
+
     nav .door {
         position: absolute;
         width: 10rem;
@@ -244,8 +250,6 @@ html {
         transform: translateX(100%);
 
         z-index: 501;
-
-        background-color: aqua;
     }
 
     nav .door svg {

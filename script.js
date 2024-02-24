@@ -25,39 +25,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }, false);
 });
 
-// Define isNavOpen, nav and doorDiv in the global scope
-var isNavOpen = false;
+// Define nav and doorDiv in the global scope
 var nav = document.querySelector('nav');
 var doorDiv = document.querySelector('.door');
-
-// Function to open the nav
-function openNav() {
-    nav.style.transform = 'translateX(0)';
-    isNavOpen = true;
-}
-
-// Function to close the nav
-function closeNav() {
-    nav.style.transform = 'translateX(-100%)';
-    isNavOpen = false;
-}
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check if the nav and .door div were found
     if (nav && doorDiv) {
-        // Add a mouseenter event listener to the nav to open it
-        nav.addEventListener('mouseenter', openNav);
-
-        // Add a mouseleave event listener to the nav to close it
-        nav.addEventListener('mouseleave', closeNav);
-
         // Add a click event listener to the .door div to open/close the nav
         doorDiv.addEventListener('click', function(event) {
-            if (isNavOpen) {
-                closeNav();
-            } else {
-                openNav();
-            }
+            nav.classList.toggle('open');
             event.stopPropagation();
         });
 
@@ -67,7 +44,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         // Add a click event listener to the body to close the nav
-        document.body.addEventListener('click', closeNav);
+        document.body.addEventListener('click', function() {
+            nav.classList.remove('open');
+        });
     } else {
         console.log('Could not find nav element or .door div');
     }
