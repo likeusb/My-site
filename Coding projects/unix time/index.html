@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem ipsum</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>The 24hr Compatible Unix Timestamp Converter</h1>
+    <form id="dateForm">
+        <div class="select-group">
+            <label for="year">Year</label>
+            <select id="year" name="year" data-section="Shit">
+                <script>
+                    var currentYear = new Date().getFullYear();
+                    for (var i = 2037; i >= 1970; i--) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="month">Month</label>
+            <select id="month" name="month">
+                <script>
+                    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                    for (var i = 0; i < months.length; i++) {
+                        document.write('<option value="' + (i + 1) + '">' + months[i] + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="day">Dat</label>
+            <select id="day" name="day">
+                <script>
+                    for (var i = 1; i <= 31; i++) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="hours">Hour</label>
+            <select id="hours" name="hours">
+                <script>
+                    for (var i = 0; i < 24; i++) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="minutes">Minute</label>
+            <select id="minutes" name="minutes">
+                <script>
+                    for (var i = 0; i < 60; i++) {
+                        document.write('<option value="' + i + '">' + i + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="style">Style</label>
+            <select id="style" name="style">
+                <option value="t">Short Time (16:20)</option>
+                <option value="T">Long Time (16:20:30)</option>
+                <option value="d">Short Date (20/04/2021)</option>
+                <option value="D">Long Date (20 April 2021)</option>
+                <option value="f">Short Date/Time (20 April 2021 16:20)</option>
+                <option value="F">Long Date/Time (Tuesday, 20 April 2021 16:20)</option>
+                <option value="R">Relative Time (2 months ago)</option>
+            </select>
+        </div>
+        <div class="select-group">
+            <label for="timezone">Timezone</label>
+            <select id="timezone" name="timezone">
+                <script>
+                    var timezones = ["-12:00", "-11:00", "-10:00", "-09:00", "-08:00", "-07:00", "-06:00", "-05:00", "-04:00", "-03:00", "-02:00", "-01:00", "00:00", "+01:00", "+02:00", "+03:00", "+04:00", "+05:00", "+06:00", "+07:00", "+08:00", "+09:00", "+10:00", "+11:00", "+12:00"];
+                    var localTimezoneOffset = -new Date().getTimezoneOffset() / 60;
+                    var localTimezone = (localTimezoneOffset >= 0 ? '+' : '-') + Math.abs(localTimezoneOffset).toString().padStart(2, '0') + ':00';
+                    for (var i = 0; i < timezones.length; i++) {
+                        document.write('<option value="' + timezones[i] + '"' + (timezones[i] === localTimezone ? ' selected' : '') + '>' + timezones[i] + '</option>');
+                    }
+                </script>
+            </select>
+        </div>
+        <input type="submit" value="Convert to Unix Timestamp">
+    </form>
+    <p id="result"></p>
+    <p id="unixTimestamp"></p>
+    <button id="copyButton">Copy</button>
+    <p id="hint"></p>
+    <script src="script.js"></script>
+</body>
+</html>

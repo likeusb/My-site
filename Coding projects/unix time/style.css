@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+/* + 
+*If you're reading this, it means you dug a little deeper. I'll try annotating some of the stranger features and all the class names should hopefully be descriptive so you don't need to do much work to make your own user style. If you have any questions, feel free to send me an email at general@likeusb.mozmail.com
+*If you have any suggestions for the code or the design, feel free to make a pull request and I'll check it out when able.
+*Btw if you're wondering why there is + before and after the comments, it is because I have a plugin on VSCode that allows me to create custom colours for comments and I found that by setting it to an impossible value, it makes the entire comment line invisible. I know it's a bug, but it's a useful bug. The asterisk makes the comment green, which I like looking at when coding.
++ */
+
+:root {
+
+    /* +
+    *Colours
+    + */
+    --bg-primary: rgb(41, 41, 41);
+
+    --font-primary: rgb(255, 255, 255);
+
+    --bg-success: rgb(0, 163, 0);
+    --bg-failure: rgb(255, 0, 0);
+    
+    /* +
+    *Typography
+    + */
+    font-family: 'Anta', sans-serif;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+h1 {
+    color: var(--font-primary);
+    font-size: 5rem;
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+}
+
+select,
+button,
+input {
+    background-color: var(--bg-primary);
+    border: var(--font-primary) 0.1rem solid;
+    border-radius: 1rem;
+    color: var(--font-primary);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    
+    font-family: 'Anta', sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+
+
+label,
+p {
+    color: var(--font-primary);
+    font-size: 2rem;
+}
+
+label {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.select-group {
+    margin: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+button.transition {
+    transition: background-color 2s;
+}
