@@ -232,5 +232,6 @@ main a {
 
 p.codingpart {
     box-sizing: border-box;
-    padding: 0 20%;
+    padding: 0 10%;
+    text-align: center;
 }
