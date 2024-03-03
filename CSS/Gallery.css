@@ -229,3 +229,8 @@ figcaption p {
 main a {
     text-decoration: underline;
 }
+
+p.codingpart {
+    box-sizing: border-box;
+    padding: 0 20%;
+}
