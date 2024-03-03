@@ -1,0 +1,80 @@
+img {
+    pointer-events: none;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 5rem;
+
+    padding: 20rem 20% 8rem 20%;
+}
+
+@media screen and (max-width: 1600px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    main {
+        grid-template-rows: repeat(3, 1fr);
+        grid-template-columns: 1fr;
+    }
+}
+
+main img {
+    aspect-ratio: 16 / 9;
+    
+    object-fit: cover;
+    display: block;
+}
+
+.project {
+    background-color: var(--bg-sec);
+
+    box-sizing: border-box;
+    padding: 2rem;
+
+    border-radius: 2rem;
+
+    transition: scale 0.1s ease-in-out;
+
+    height: 100%;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.project:hover {
+    scale: 1.05;
+}
+
+.project h2,
+.project p {
+    text-wrap: balance;
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    border-radius: 1rem;
+    user-select: none;
+}
+
+address {
+    margin-top: auto;
+}
+
+address a {
+    text-decoration: underline;
+}
