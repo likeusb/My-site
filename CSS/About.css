@@ -3,6 +3,8 @@ figure {
     align-items: center;
 
     gap: 4rem;
+
+    height: max-content;
 }
 
 figure img {
@@ -21,8 +23,6 @@ figure img {
         justify-content: center;
 
         gap: 5rem;
-
-        height: 80dvh;
     }    
 
     main {
