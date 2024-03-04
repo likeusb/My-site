@@ -5,7 +5,7 @@ main {
 }
 
 main img {
-    height: clamp(20rem, 50dvw, 80rem);
+    height: clamp(10rem, 25dvw, 40rem);
     border-radius: 4rem;
 }
 
