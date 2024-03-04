@@ -3,198 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NOT Craigslist</title>
+    <title>Linas Photography</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="icon" href="Images/logo.png">
 </head>
 <body>
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <nav>
+        <div class="door">
+            <img src="./Images/SVGs/menu.svg">
+        </div>
+        <img src="./Images/logo.png" class="logo" alt="">
+        <h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="EN/Gallery.html">Gallery</a></li>
+                <li><a href="EN/About.html">About</a></li>
+                <li><a href="EN/Contact.html">Contact me</a></li>
+            </ul>
+        </h2>
+        <div class="menu">
+            <img src="./Images/SVGs/settings.svg" alt="Open settings" id="settings">
+            <div class="menu_dropdown">
+                <div class="ThemeToggle">
+                    <img src="./Images/SVGs/moon.svg" alt="Toggle to light mode" id="Moon">
+                    <img src="./Images/SVGs/sun.svg" alt="Toggle to dark mode" id="Sun">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <figure>
+            <figcaption><h6><span class="Accent">Great</span> photos.<br>
+            <span class="Accent">Well-coded</span> websites.</h6></figcaption><!-- hehe funny joke, my coding is awful -->
+            <img src="Images/Best Work Images/Owl.jpg" alt="A photo of an owl staring at the camera, the background is blurred nicely">
+        </figure>
+    </main>
     <script src="script.js"></script>
-    <div class="Nav">
-        <div class="Navbar">
-            <div class="LogoWrapper">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 128 128">
-                    <defs>
-                    <linearGradient id="LogoGradient" gradientTransform="rotate(90)">
-                        <stop offset="5%"  stop-color="#a050fc" />
-                        <stop offset="95%" stop-color="#641dac" />
-                    </linearGradient>
-                    </defs>
-                    <path d="M64.24,21c-0.07,0-0.13,0-0.2,0c-0.02,0-0.03,0-0.05,0c-0.03,0-0.05,0.01-0.08,0.01C40.36,21.19,21.24,40.4,21.24,64 s19.11,42.81,42.67,42.99c0.03,0,0.05,0.01,0.08,0.01c0.02,0,0.03,0,0.05,0c0.07,0,0.13,0,0.2,0c23.71,0,43-19.29,43-43 S87.96,21,64.24,21z M61,100.85c-7.85-0.69-15-3.83-20.68-8.66L61,71.29V100.85z M67,71.29l20.91,21.12 c-5.76,4.8-12.99,7.88-20.91,8.47V71.29z M61,27.15v35.62L36.07,87.95c-5.5-6.46-8.83-14.82-8.83-23.95 C27.24,44.69,42.11,28.8,61,27.15z M92.19,88.21L67,62.77V27.11c19.12,1.42,34.24,17.41,34.24,36.89 C101.24,73.25,97.82,81.72,92.19,88.21z" fill="url(#LogoGradient) "></path>
-                </svg>
-                <span class="Title">NOTCraigslist</span>
-            </div>
-            <div class="RightTN">
-                <div class="Searchbar">
-                    <input type="text" placeholder="Search here...">
-                </div>
-                <div class="Icons">
-                    <div class="Post">
-                        <a href="./post.html">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M115.01172,1.46289c-3.0625,0.0125 -6.11211,1.18711 -8.41211,3.53711l-37.40039,37.30078c-9.2,9.2 -16.1,20.69922 -20,33.19922c-0.3,1.1 0.00117,2.2 0.70117,3c0.6,0.6 1.29961,0.90039 2.09961,0.90039c0.3,0 0.60039,0.00039 0.90039,-0.09961c12.5,-3.8 23.99922,-10.8 33.19922,-20l31.59961,-31.60156c0.9,1.2 1.40039,2.70117 1.40039,4.20117c0,1.9 -0.69961,3.60039 -2.09961,4.90039l-15.59961,15.59961c-1.2,1.2 -1.2,3.09922 0,4.19922c0.6,0.6 1.39961,0.90039 2.09961,0.90039c0.7,0 1.49961,-0.30039 2.09961,-0.90039l15.80078,-15.59961c2.5,-2.5 3.79883,-5.69922 3.79883,-9.19922c0,-3.1 -1.09961,-6.1 -3.09961,-8.5l1.40039,-1.40039c4.7,-4.7 4.7,-12.3 0,-17c-2.35,-2.3 -5.42578,-3.45 -8.48828,-3.4375zM19,6c-7.2,0 -13,5.8 -13,13v90c0,7.2 5.8,13 13,13h90c7.2,0 13,-5.8 13,-13v-40c0,-1.7 -1.3,-3 -3,-3c-1.7,0 -3,1.3 -3,3v40c0,3.9 -3.1,7 -7,7h-90c-3.9,0 -7,-3.1 -7,-7v-90c0,-3.9 3.1,-7 7,-7h60c1.7,0 3,-1.3 3,-3c0,-1.7 -1.3,-3 -3,-3zM115,7.5c1.5,0 3.09922,0.60078 4.19922,1.80078c2.4,2.3 2.40156,6.09844 0.10156,8.39844l-37.30078,37.30078c-7.1,7.1 -15.7,12.7 -25,16.5c3.7,-9.3 9.4,-17.80039 16.5,-24.90039l37.30078,-37.29883c1.2,-1.2 2.69922,-1.80078 4.19922,-1.80078z"></path></g></g>
-                            </svg>
-                            Create a post
-                        </a>
-                    </div>
-                    <div class="Account">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256"
-                            style="fill:#000000;">
-                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(10.66667,10.66667)"><path d="M12,3c-2.20914,0 -4,1.79086 -4,4c0,2.20914 1.79086,4 4,4c2.20914,0 4,-1.79086 4,-4c0,-2.20914 -1.79086,-4 -4,-4zM8.47266,14.50195c-0.08344,-0.00048 -0.16775,0.01 -0.25,0.03125c-2.63,0.676 -5.22266,1.9988 -5.22266,3.9668v1.5c0,0.552 0.448,1 1,1h16c0.552,0 1,-0.448 1,-1v-1.5c0,-1.968 -2.59361,-3.2908 -5.22461,-3.9668c-0.329,-0.085 -0.68488,0.006 -0.92187,0.25c-0.724,0.747 -1.73052,1.2168 -2.85352,1.2168c-1.123,0 -2.12852,-0.4698 -2.85352,-1.2168c-0.17775,-0.183 -0.42352,-0.2798 -0.67383,-0.28125z"></path></g></g>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="Leftnav">
-            <div class="LeftnavCurve"></div>
-            <div class="SelectorWrapper">
-                <div class="custom-select">
-                    <div class="selected-option">Region</div>
-                    <div class="options">
-                        <div class="option">Los Angeles</div>
-                        <div class="option">New York</div>
-                        <div class="option">Washington State</div>
-                        <div class="option">Florida</div>
-                        <div class="option">Texas</div>
-                        <div class="option">Alaska</div>
-                        <div class="option">North Dakota</div>
-                        <div class="option">Arizona</div>
-                        <div class="option">North Carolina</div>
-                    </div>
-                </div>
-                <div class="custom-select">
-                    <div class="selected-option">Area</div>
-                    <div class="options">
-                        <div class="option">Miami</div>
-                        <div class="option">Tampa</div>
-                        <div class="option">Central LA</div>
-                        <div class="option">Of</div>
-                        <div class="option">The</div>
-                        <div class="option">Region</div>
-                        <div class="option">You</div>
-                        <div class="option">Are</div>
-                        <div class="option">In</div>
-                    </div>
-                </div>
-                <div class="custom-select">
-                    <div class="selected-option">Category</div>
-                    <div class="options">
-                        <div class="option">Computers</div>
-                        <div class="option">Photography</div>
-                        <div class="option">Home Appliances</div>
-                        <div class="option">Electronics</div>
-                        <div class="option">Transportation</div>
-                        <div class="option">Decor</div>
-                        <div class="option">Clothing</div>
-                        <div class="option">Repair parts</div>
-                        <div class="option">Garden Parts</div>
-                    </div>
-                </div>
-                <div class="custom-select">
-                    <div class="selected-option">Subcategory</div>
-                    <div class="options">
-                        <div class="option">Prebuilds</div>
-                        <div class="option">Laptops</div>
-                        <div class="option">Servers</div>
-                        <div class="option">CPU</div>
-                        <div class="option">RAM</div>
-                        <div class="option">Storage</div>
-                        <div class="option">GPU</div>
-                        <div class="option">Power Supplies</div>
-                        <div class="option">Other Parts</div>
-                    </div>
-                </div>
-            </div>
-            <div class="ToggleWrapperOne">
-                <button class="Toggle"><span>New</span></button>
-                <hr>
-                <button class="Toggle"><span>Used</span></button>
-            </div>
-        </div>
-    </div>
-    <div class="ContentWrapper">
-        <div class="Content">
-            <div class="TopToggles">
-                <div class="TTLeft">
-                    <div class="TTLBox">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M14.98438,3.98633c-0.04844,0.00105 -0.09675,0.00562 -0.14453,0.01367h-9.83984c-0.55226,0.00006 -0.99994,0.44774 -1,1v9.83203c-0.01785,0.10799 -0.01785,0.21818 0,0.32617v9.67383c-0.01785,0.10799 -0.01785,0.21818 0,0.32617v9.67383c-0.01785,0.10799 -0.01785,0.21818 0,0.32617v9.8418c0.00006,0.55226 0.44774,0.99994 1,1h9.83203c0.10799,0.01785 0.21818,0.01785 0.32617,0h9.67383c0.10799,0.01785 0.21818,0.01785 0.32617,0h9.67383c0.10799,0.01785 0.21818,0.01785 0.32617,0h9.8418c0.55226,-0.00006 0.99994,-0.44774 1,-1v-9.83203c0.01785,-0.10799 0.01785,-0.21818 0,-0.32617v-9.67383c0.01785,-0.10799 0.01785,-0.21818 0,-0.32617v-9.67383c0.01785,-0.10799 0.01785,-0.21818 0,-0.32617v-9.8418c-0.00006,-0.55226 -0.44774,-0.99994 -1,-1h-9.8457c-0.05615,-0.00939 -0.113,-0.01396 -0.16992,-0.01367c-0.04844,0.00105 -0.09675,0.00562 -0.14453,0.01367h-9.68555c-0.05615,-0.00939 -0.113,-0.01396 -0.16992,-0.01367c-0.04844,0.00105 -0.09675,0.00562 -0.14453,0.01367h-9.68555c-0.05615,-0.00939 -0.113,-0.01396 -0.16992,-0.01367zM6,6h8v8h-8zM16,6h8v8h-8zM26,6h8v8h-8zM36,6h8v8h-8zM6,16h8v8h-8zM16,16h8v8h-8zM26,16h8v8h-8zM36,16h8v8h-8zM6,26h8v8h-8zM16,26h8v8h-8zM26,26h8v8h-8zM36,26h8v8h-8zM6,36h8v8h-8zM16,36h8v8h-8zM26,36h8v8h-8zM36,36h8v8h-8z"></path></g></g>
-                            </svg>
-                            Grid
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0,0,256,256"
-                                style="fill:#ffffff;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M44.98438,12.96875c-0.53125,0.01563 -1.03125,0.23438 -1.39844,0.61719l-18.58594,18.58594l-18.58594,-18.58594c-0.37891,-0.38672 -0.89453,-0.60547 -1.4375,-0.60547c-0.8125,0 -1.54297,0.49609 -1.84766,1.25c-0.30859,0.75391 -0.125,1.61719 0.45703,2.18359l20,20c0.78125,0.78125 2.04688,0.78125 2.82813,0l20,-20c0.59375,-0.57031 0.78125,-1.44922 0.46094,-2.21094c-0.31641,-0.76172 -1.06641,-1.25 -1.89062,-1.23437z"></path></g></g>
-                            </svg>
-                        </span>
-                    </div>
-                    <div class="TTLBox">
-                        <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(2,2)"><path d="M28,1c-1.7,0 -3,1.3 -3,3v10c0,1.7 1.3,3 3,3c1.7,0 3,-1.3 3,-3v-10c0,-1.7 -1.3,-3 -3,-3zM100,1c-1.7,0 -3,1.3 -3,3v62c0,1.7 1.3,3 3,3h16.5c2.5,0 4.5,2 4.5,4.5c0,1.3 -0.59961,2.6 -1.59961,3.5l-50.90039,42.40039c-2.6,2.2 -6.4,2.2 -9,0l-50.90039,-42.5c-1,-0.9 -1.59961,-2.1 -1.59961,-3.5c0,-2.4 2,-4.40039 4.5,-4.40039h16.5c1.7,0 3,-1.3 3,-3v-32c0,-1.7 -1.3,-3 -3,-3c-1.7,0 -3,1.3 -3,3v29h-13.5c-5.8,0 -10.5,4.7 -10.5,10.5c0,3.1 1.40078,6.09961 3.80078,8.09961l50.89844,42.40039c2.4,2 5.40078,3 8.30078,3c3,0 5.90078,-1 8.30078,-3l50.89844,-42.40039c2.4,-2 3.80078,-4.89961 3.80078,-8.09961c0,-5.8 -4.7,-10.5 -10.5,-10.5h-13.5v-59c0,-1.7 -1.3,-3 -3,-3zM49,16c-5.5,0 -10,4.5 -10,10c0,5.5 4.5,10 10,10c5.5,0 10,-4.5 10,-10c0,-5.5 -4.5,-10 -10,-10zM81.36328,16.9375c-0.7625,0.0375 -1.5125,0.36289 -2.0625,0.96289l-35,38.29883c-1.1,1.2 -1.00078,3.10117 0.19922,4.20117c0.6,0.5 1.3,0.79883 2,0.79883c0.8,0 1.59922,-0.3 2.19922,-1l35,-38.29883c1.1,-1.2 1.00078,-3.10117 -0.19922,-4.20117c-0.6,-0.55 -1.37422,-0.79922 -2.13672,-0.76172zM49,22c2.2,0 4,1.8 4,4c0,2.2 -1.8,4 -4,4c-2.2,0 -4,-1.8 -4,-4c0,-2.2 1.8,-4 4,-4zM79,42c-5.5,0 -10,4.5 -10,10c0,5.5 4.5,10 10,10c5.5,0 10,-4.5 10,-10c0,-5.5 -4.5,-10 -10,-10zM79,48c2.2,0 4,1.8 4,4c0,2.2 -1.8,4 -4,4c-2.2,0 -4,-1.8 -4,-4c0,-2.2 1.8,-4 4,-4z"></path></g></g>
-                            </svg>
-                            Price
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="15" height="15" viewBox="0,0,256,256"
-                                style="fill:#ffffff;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M44.98438,12.96875c-0.53125,0.01563 -1.03125,0.23438 -1.39844,0.61719l-18.58594,18.58594l-18.58594,-18.58594c-0.37891,-0.38672 -0.89453,-0.60547 -1.4375,-0.60547c-0.8125,0 -1.54297,0.49609 -1.84766,1.25c-0.30859,0.75391 -0.125,1.61719 0.45703,2.18359l20,20c0.78125,0.78125 2.04688,0.78125 2.82813,0l20,-20c0.59375,-0.57031 0.78125,-1.44922 0.46094,-2.21094c-0.31641,-0.76172 -1.06641,-1.25 -1.89062,-1.23437z"></path></g></g>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-                <div class="TTMiddle">
-                    <div class="TTMBox" id="LeftMost">
-                        <div class="TTMBSVGWrapper" id="Invert">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="translate(263.16761,256.0324) rotate(180) scale(5.12,5.12)"><path d="M8.99219,3.99219c-0.41016,0 -0.77344,0.24609 -0.92969,0.62109c-0.15234,0.37891 -0.0625,0.80859 0.23047,1.09375l19.29297,19.29297l-19.29297,19.29297c-0.26172,0.25 -0.36719,0.625 -0.27344,0.97266c0.08984,0.35156 0.36328,0.625 0.71484,0.71484c0.34766,0.09375 0.72266,-0.01172 0.97266,-0.27344l20.70703,-20.70703l-20.70703,-20.70703c-0.1875,-0.19531 -0.44531,-0.30078 -0.71484,-0.30078zM21.98828,3.99219c-0.40625,0 -0.76953,0.24609 -0.92578,0.62109c-0.15234,0.37891 -0.0625,0.80859 0.23047,1.09375l19.29297,19.29297l-19.29297,19.29297c-0.26172,0.25 -0.36719,0.625 -0.27344,0.97266c0.08984,0.35156 0.36328,0.625 0.71484,0.71484c0.34766,0.09375 0.72266,-0.01172 0.97266,-0.27344l20.70703,-20.70703l-20.70703,-20.70703c-0.1875,-0.19531 -0.44531,-0.30078 -0.71875,-0.30078z"></path></g></g>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="TTMBox" id="RightMost">
-                        <div class="TTMBSVGWrapper" id="Invert">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="translate(255.87448,256.04054) rotate(180) scale(8.53333,8.53333)"><path d="M9.99023,3.99023c-0.40692,0.00011 -0.77321,0.24676 -0.92633,0.62377c-0.15312,0.37701 -0.06255,0.80921 0.22907,1.09303l9.29297,9.29297l-9.29297,9.29297c-0.26124,0.25082 -0.36647,0.62327 -0.27512,0.97371c0.09136,0.35044 0.36503,0.62411 0.71547,0.71547c0.35044,0.09136 0.72289,-0.01388 0.97371,-0.27512l10,-10c0.39037,-0.39053 0.39037,-1.02353 0,-1.41406l-10,-10c-0.18827,-0.19353 -0.44679,-0.30272 -0.7168,-0.30273z"></path></g></g>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="TTMCounter">
-                        <div id="counterText"></div>
-                    </div>
-                    <div class="TTMBox" id="LeftMost">
-                        <div class="TTMBSVGWrapper" id="Invert">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(8.53333,8.53333)"><path d="M9.99023,3.99023c-0.40692,0.00011 -0.77321,0.24676 -0.92633,0.62377c-0.15312,0.37701 -0.06255,0.80921 0.22907,1.09303l9.29297,9.29297l-9.29297,9.29297c-0.26124,0.25082 -0.36647,0.62327 -0.27512,0.97371c0.09136,0.35044 0.36503,0.62411 0.71547,0.71547c0.35044,0.09136 0.72289,-0.01388 0.97371,-0.27512l10,-10c0.39037,-0.39053 0.39037,-1.02353 0,-1.41406l-10,-10c-0.18827,-0.19353 -0.44679,-0.30272 -0.7168,-0.30273z"></path></g></g>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="TTMBox" id="RightMost">
-                        <div class="TTMBSVGWrapper">
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M8.99219,3.99219c-0.41016,0 -0.77344,0.24609 -0.92969,0.62109c-0.15234,0.37891 -0.0625,0.80859 0.23047,1.09375l19.29297,19.29297l-19.29297,19.29297c-0.26172,0.25 -0.36719,0.625 -0.27344,0.97266c0.08984,0.35156 0.36328,0.625 0.71484,0.71484c0.34766,0.09375 0.72266,-0.01172 0.97266,-0.27344l20.70703,-20.70703l-20.70703,-20.70703c-0.1875,-0.19531 -0.44531,-0.30078 -0.71484,-0.30078zM21.98828,3.99219c-0.40625,0 -0.76953,0.24609 -0.92578,0.62109c-0.15234,0.37891 -0.0625,0.80859 0.23047,1.09375l19.29297,19.29297l-19.29297,19.29297c-0.26172,0.25 -0.36719,0.625 -0.27344,0.97266c0.08984,0.35156 0.36328,0.625 0.71484,0.71484c0.34766,0.09375 0.72266,-0.01172 0.97266,-0.27344l20.70703,-20.70703l-20.70703,-20.70703c-0.1875,-0.19531 -0.44531,-0.30078 -0.71875,-0.30078z"></path></g></g>
-                        </svg>  
-                        </div>
-                    </div>
-                </div>
-                <div class="TTRight">
-                    <div class="TTRBox">
-                        <span>
-                            Save
-                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0,0,256,256"
-                                style="fill:#000000;">
-                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M7,4c-1.64545,0 -3,1.35455 -3,3v36c0,1.64545 1.35455,3 3,3h36c1.64545,0 3,-1.35455 3,-3v-29.80078c-0.00005,-0.2652 -0.10543,-0.51952 -0.29297,-0.70703l-8.19922,-8.19922c-0.18751,-0.18754 -0.44183,-0.29292 -0.70703,-0.29297zM7,6h5v12c0,1.64545 1.35455,3 3,3h19c1.64545,0 3,-1.35455 3,-3v-11.38672l7,7v29.38672c0,0.55454 -0.44546,1 -1,1h-5v-15c0,-1.64545 -1.35455,-3 -3,-3h-20c-1.64545,0 -3,1.35455 -3,3v15h-5c-0.55455,0 -1,-0.44546 -1,-1v-36c0,-0.55455 0.44545,-1 1,-1zM14,6h21v12c0,0.55455 -0.44546,1 -1,1h-19c-0.55454,0 -1,-0.44545 -1,-1zM29,8c-0.55226,0.00006 -0.99994,0.44774 -1,1v7c0.00006,0.55226 0.44774,0.99994 1,1h3c0.55226,-0.00006 0.99994,-0.44774 1,-1v-7c-0.00006,-0.55226 -0.44774,-0.99994 -1,-1zM30,10h1v5h-1zM15,28h20c0.55454,0 1,0.44545 1,1v15h-22v-15c0,-0.55455 0.44546,-1 1,-1zM8,40v2h2v-2zM40,40v2h2v-2z"></path></g></g>
-                            </svg>
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="Listings"></div>
-        </div>
-    </div>
 </body>
 </html>
