@@ -1,0 +1,807 @@
+/* +
+* ======================================
+* Project name: Skytech Revamp
+* Goals: 
+* - Make the website look better:
+*    - Keep the brand identity
+*    - Make it look more modern
+*    - Make it more pleasing to look at
+*    - Add a dark mode
+*
+* - Practise CSS
+* ======================================
++ */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+:root {
+    /* +
+    *Variable colours 
+    + */
+    --bg-one: rgb(24, 26, 27);
+    --bg-two: rgb(21, 22, 23); 
+    --bg-three: rgb(46, 46, 46);
+    --bg-four: rgb(61, 60, 58);
+    --border-one: rgb(130, 121, 107);
+    --font-one: rgb(255, 255, 255);
+    --font-two: rgb(212, 212, 212);
+    --font-accent: rgb(0, 192, 58);
+
+    /* +
+    *Typography
+    + */
+    font-size: 10px;
+    font-family: 'Open Sans', sans-serif;
+    color: var(--font-one);
+
+    /* + 
+    *Colors 
+    + */
+    background-color: var(--bg-one);
+}
+
+body {
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+}
+
+.Body {
+    width: 90%;
+    margin: 5rem 5% 0 5%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 2rem;
+}
+
+.Navbar {
+    height: 10rem;
+    background-color: var(--bg-two);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 4rem;
+    box-sizing: border-box;
+    border-bottom: 0.5rem solid var(--border-one);
+}
+
+.NavbarLogo {
+    display: flex;
+    align-items: center;
+}
+
+.Navbar img#Logo {
+    height: 5rem;
+}
+
+.NavbarSearch {
+    background-color: var(--bg-two);
+    border-radius: 9999rem;
+    width: 50rem;
+    height: 5rem;
+    border: 0.25rem solid var(--border-one);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+}
+
+.NavbarSearch input {
+    background-color: var(--bg-two);
+    border: none;
+    color: var(--font-one);
+    font-size: 2rem;
+    width: 100%;
+}
+
+.NavbarSearch input:focus {
+    outline: none;
+}
+
+.NavbarSearch:focus-within, .NavbarSearch:hover {
+    border: 0.25rem solid var(--font-accent);
+}
+
+.NavbarSearch:focus-within svg path, .NavbarSearch:hover svg path {
+    fill: var(--font-accent);
+}
+
+.NavbarSearch svg {
+    cursor: pointer;
+}
+
+.NavbarIcons {
+    display: flex;
+    align-items: center;
+}
+
+.NavbarMenu img {
+    position: relative;
+}
+
+.NavbarMenu img#Options {
+    margin-left: 4rem;
+    filter: invert(1);
+}
+
+.ShoppingIcon {
+    position: relative;
+}
+
+.ShoppingIcon::after {
+    position: absolute;
+    top: -1rem;
+    left: 60%;
+    background-color: var(--font-accent);
+    height: 2.5rem;
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    content: attr(data-shoppingnumber);
+    border-radius: 100%;
+    color: black;
+}
+
+.NavbarMenuDropdown {
+    position: absolute;
+    height: max-content;
+    width: max-content;
+    background-color: var(--bg-two);
+    transform: scale(0);
+    transform-origin: top right;
+    transition: 0.1s ease-in-out;
+    right: 4rem;
+    box-sizing: border-box;
+    border: 0.5rem solid var(--border-one);
+    border-radius: 1rem;
+    padding: 0rem 2rem 0rem 7rem;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    z-index: 2;
+}
+
+.NavbarMenuDropdown#Shopping {
+    right: 12rem;
+    padding-bottom: 2rem;
+}
+
+.NavbarMenuDropdown h1 {
+    font-size: 3rem;
+}
+
+.NavbarMenuDropdown p {
+    font-size: 2rem;
+    padding-inline: 1rem;
+    transition: 0.05s ease-in-out;
+    cursor: pointer;
+}
+
+.NavbarMenuDropdown p:hover {
+    color: var(--font-accent);
+    border-right: 0.5rem solid var(--font-accent);
+}
+
+.NavbarMenu:hover .NavbarMenuDropdown {
+    transform: scale(1);
+}
+
+.NavbarMenuDropdownBox {
+    background-color: var(--bg-one);
+    width: 40rem;
+    height: 20rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    border: 0.2rem solid var(--border-one);
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: 2rem 16rem;
+    grid-template-columns: 1fr 2fr;
+    margin-bottom: 2rem;
+}
+
+.NMDBProductTitle {
+    width: 100%;
+    height: 2rem;
+    font-size: 1.5rem;
+    grid-column: span 2;
+}
+
+.NMDBProductImage {
+    width: 100%;
+    height: 100%;
+}
+
+.NMDBProductImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.NMDBExtraInfo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.NMDBEIPrice {
+    width: 100%;
+    box-sizing: border-box;
+    padding-inline: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    height: max-content;
+    margin-bottom: 1.5rem;
+}
+
+.NMDBEIPrice h1 {
+    font-size: 1.5rem;
+}
+
+.NMDBEIQuantity {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.NMDBEIQuantity svg {
+    height: 100%;
+    cursor: pointer;
+}
+
+.NMDBEIQuantity svg:hover path {
+    fill: var(--font-accent);
+}
+
+.NMDBEIQuantity svg#Flip {
+    transform: scaleX(-1);
+}
+
+.NMDBEIMore, .NMDBEIDelete {
+    width: 80%;
+    height: 5rem;
+    background-color: var(--bg-two);
+    box-sizing: border-box;
+    border: 0.2rem solid var(--border-one);
+    display: flex;
+    align-items: center;
+    padding-inline: 1rem;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.NMDBEIMore:hover, .NMDBEIDelete:hover {
+    border: 0.2rem solid var(--font-accent);
+}
+
+.NMDBEIMore:hover svg path, .NMDBEIDelete:hover svg path {
+    fill: var(--font-accent);
+}
+
+.NMDBEIMore {
+    border-radius: 2rem 2rem 1rem 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.NMDBEIDelete {
+    border-radius: 1rem 1rem 2rem 2rem;
+}
+
+.NavbarMenuDropdownContinue {
+    width: 30rem;
+    height: 7.5rem;
+    background-color: var(--bg-one);
+    box-sizing: border-box;
+    border: 0.2rem solid var(--border-one);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    font-size: 3rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.NavbarMenuDropdownContinue:hover {
+    border: 0.2rem solid var(--font-accent);
+}
+
+.NavbarMenuDropdownContinue:hover svg path {
+    fill: var(--font-accent);
+}
+
+.ProductCategories {
+    background-color: var(--bg-two);
+    border-bottom: 0.5rem solid var(--border-one);
+    width: 100%;
+    height: 5rem;
+    padding: 1rem 4rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ProductCategory {
+    position: relative;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+}
+
+.ProductCategory a:hover {
+    color: var(--font-accent);
+}
+
+.ProductCategoryDropdown {
+    position: absolute;
+    height: 25rem;
+    width: 100%;
+    background-color: var(--bg-two);
+    bottom: -24.75rem;
+    left: 0;
+    transform: scale(0) translateY(100%);
+    transform-origin: top;
+    transition: 0.1s ease-in-out;
+    box-sizing: border-box;
+    border: 0.5rem solid var(--border-one);
+    border-top: 0;
+    padding: 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+}
+
+.ProductCategory:hover .ProductCategoryDropdown {
+    transform: scale(1) translateY(0);
+}
+
+.ProductCategory:focus-within .ProductCategoryDropdown {
+    transform: scale(1) translateY(0);
+}
+
+.ProductCategoryDropdownText {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ProductCategoryDropdownText:hover {
+    color: var(--font-accent);
+}
+
+.ProductCategoryDropdownRightDrop {
+    position: absolute;
+    top: -1rem;
+    bottom: 0;
+    right: -13rem;
+    transform: scale(0) translateX(100%);
+    background-color: var(--bg-two);
+    height: 25rem;
+    width: 12rem;
+    transition: 0.1s ease-in-out;
+    box-sizing: border-box;
+    border: 0.5rem solid var(--border-one);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    color: var(--font-one);
+}
+
+.ProductCategoryDropdownRightDrop a:hover {
+    color: var(--font-accent);
+}
+
+.ProductCategoryDropdownText:hover  .ProductCategoryDropdownRightDrop {
+    transform: scale(1) translateX(0);
+}
+
+.Column {
+    display: flex;
+    flex-direction: column;
+    /* background-color: lime; */
+    height: max-content;
+    box-sizing: border-box;
+    padding: 1rem;
+    gap: 5rem;
+}
+
+.LandRBoxes {
+    width: 100%;
+    height: max-content;
+    background-color: var(--bg-two);
+    border-radius: 2rem;
+    border: 0.5rem solid var(--border-one);
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.LandRBoxes#LeftBox {
+    gap: 0;
+}
+
+.DualToggle {
+    width: 100%;
+    height: 7.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 1rem;
+}
+
+.ToggleLeft, .ToggleRight {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background-color: var(--bg-three);
+    box-sizing: border-box;
+    border: 0.5rem solid var(--border-one);
+    padding: 0 3.5rem;
+    font-size: 2.5rem;
+    border-bottom: 0;
+}
+
+.ToggleLeft {
+    border-radius: 1rem 0 0 0;
+    border-right: 0.5rem solid var(--border-one);
+}
+
+.ToggleRight {
+    border-radius: 0 1rem 0rem 0;
+    border-left: 0.5rem solid var(--border-one);
+}
+
+.ToggleLeft:hover, .ToggleRight:hover {
+    border: 0.5rem solid var(--font-accent);
+    border-bottom: 0;
+}
+
+.ToggleLeft:hover {
+    border-right: 0.5rem solid var(--font-accent);
+}
+
+.ToggleRight:hover {
+    border-left: 0.5rem solid var(--font-accent);
+}
+
+.ToggleLeft svg, .ToggleRight svg {
+    height: 3rem;
+    width: 3rem;
+    fill: var(--font-one);
+}
+
+.ToggleLeft:hover svg path, .ToggleRight:hover svg path {
+    fill: var(--font-accent);
+}
+
+.ContentOfBox {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    background-color: var(--bg-three);
+    border: 0.5rem solid var(--border-one);
+    box-sizing: border-box;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.ContentOfBox#WithToggles {
+    flex-direction: row;
+    justify-content: space-between;
+    top: -0.5rem;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.Timeline {
+    width: 0.5rem;
+    height: 100%;
+}
+
+.TimelineTop {
+    width: 100%;
+    height: 5rem;
+    background: linear-gradient(to top, var(--font-accent), transparent);
+}
+
+.TimelineMiddle {
+    width: 100%;
+    height: 31rem;
+    background-color: var(--font-accent);
+}
+
+.TimelineBottom {
+    width: 100%;
+    height: 5rem;
+    background: linear-gradient(to bottom, var(--font-accent), transparent);
+}
+
+.TimelineCircle {
+    position: absolute;
+    left: 0;
+    transform: translate(0);
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--bg-three);
+    border: 0.5rem solid var(--font-accent);
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TimelineCircle#One {
+    top: 5rem;
+}
+
+.TimelineCircle#Two {
+    top: 15rem;
+}
+
+.TimelineCircle#Three {
+    top: 25rem;
+}
+
+.TimelineCircle#Four {
+    top: 35rem;
+}
+
+.TimelineRight {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+
+.TimelineRightEntry {
+    width: 100%;
+    height: 9rem;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.TimelineTimeBanner {
+    width: 25%;
+    height: 9rem;
+    background-color: var(--bg-four);
+    box-sizing: border-box;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 1rem 2rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-two);
+    position: relative;
+    border: 0.25rem solid var(--font-accent);
+}
+
+.TimelineTimeBanner::before {
+    position: absolute;
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--bg-four);
+    left: 0;
+    top: 0;
+    transform: translateY(2.75rem) translateX(-1.15rem) rotate(45deg);
+    box-sizing: border-box;
+    border: 0.25rem solid var(--font-accent);
+    border-right: 0;
+    border-top: 0;
+
+}
+
+.TRETextWrapper a {
+    color: var(--font-one);
+}
+
+.ContentOfBoxTitle {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--font-two);
+}
+
+.COBTopPurchase {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.COBTopPurchaseCard {
+    width: 100%;
+    height: 7.5rem;
+    background-color: var(--bg-four);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.COBTopPurchaseCard img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.COBTopPurchaseCardTitle {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.COBTopPurchaseCardPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-accent);
+}
+
+.COBParagraph {
+    font-size: 2rem;
+    width: 100%;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.COBParagraph a {
+    color: var(--font-one);
+}
+
+.COBImage {
+    position: relative;
+    width: 100%;
+    height: 21rem;
+    border-radius: 2rem;
+    background: url('Images/lojalumokortele.jpg') no-repeat 0 0 / cover;
+}
+
+.Accent {
+    color: var(--font-accent);
+    font-weight: 700;
+}
+
+/* .CentralTop {
+    width: 100%;
+    background-color: var(--bg-two);
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+    border: 0.5rem solid var(--border-one);
+    height: 7.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+.CCBoxIcons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.CCBoxIcons svg {
+    cursor: pointer;
+}
+
+.CCBoxIcons svg:hover path {
+    fill: var(--font-accent);
+}
+
+.CCBoxIcons svg#Flip {
+    transform: scaleX(-1);
+}
+
+.CentralContentBox {
+    width: 100%;
+    height: 35rem;
+    background-color: var(--bg-two);
+    border-radius: 2rem;
+    border: 0.5rem solid var(--border-one);
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+}
+
+.CCBoxTop {
+    width: 100%;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.CCBoxTitle {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--font-accent);
+}
+
+.CCBoxBottom {
+    width: 75rem;
+    display: flex;
+    overflow: auto;
+    gap: 2rem;
+    position: relative;
+}
+
+.CCBoxShadow {
+    background: linear-gradient(to left, var(--bg-two), transparent);
+    height: 24.9rem;
+    width: 25rem;
+    position: absolute;
+    right: 4.4rem;
+    top: 6.75rem;
+}
+
+.CCBBProduct {
+    width: 20rem;
+    height: 95%;
+    background-color: var(--bg-three);
+    border-radius: 1rem;
+    border: 0.5rem solid var(--border-one);
+    box-sizing: border-box;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.CCBBProduct img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.CCBBProductTitle {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-two);
+    width: 17.5rem;
+}
+
+.CCBBProductPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--font-accent);
+}
