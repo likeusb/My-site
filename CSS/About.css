@@ -2,8 +2,6 @@ figure {
     display: flex;
     align-items: center;
 
-    min-height: calc(100dvh - 9rem);
-
     gap: 4rem;
 }
 
