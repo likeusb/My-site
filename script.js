@@ -45,11 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
             event.stopPropagation();
         });
 
-        // Add a click event listener to the nav to stop event propagation
-        nav.addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
-
         // Add a click event listener to the body to close the nav
         document.body.addEventListener('click', function() {
             nav.classList.remove('open');
@@ -57,17 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add a touch event listener to the .door div to open/close the nav
         doorDiv.addEventListener('touchend', function(event) {
-            if (nav.classList.contains('open')) {
-                nav.classList.remove('open');
-            } else {
-                nav.classList.add('open');
-            }
+            nav.classList.toggle('open');
             event.preventDefault();
-            event.stopPropagation();
-        });
-
-        // Add a touch event listener to the nav to stop event propagation
-        nav.addEventListener('touchend', function(event) {
             event.stopPropagation();
         });
 
