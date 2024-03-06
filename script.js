@@ -38,7 +38,9 @@ var nav = document.querySelector('nav');
 var doorDiv = document.querySelector('.door');
 
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if the nav and .door div were found
+    var nav = document.querySelector('nav');
+    var doorDiv = document.querySelector('.door');
+
     if (nav && doorDiv) {
         // Add a click event listener to the .door div to open/close the nav
         doorDiv.addEventListener('click', function(event) {
@@ -55,28 +57,28 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.addEventListener('click', function() {
             nav.classList.remove('open');
         });
+
+        // Add a touch event listener to the .door div to open/close the nav
+        doorDiv.addEventListener('touchend', function(event) {
+            if (nav.classList.contains('open')) {
+                nav.classList.remove('open');
+            } else {
+                nav.classList.add('open');
+            }
+            event.preventDefault();
+            event.stopPropagation();
+        });
+
+        // Add a touch event listener to the nav to stop event propagation
+        nav.addEventListener('touchend', function(event) {
+            event.stopPropagation();
+        });
+
+        // Add a touch event listener to the body to close the nav
+        document.body.addEventListener('touchend', function() {
+            nav.classList.remove('open');
+        });
     } else {
         console.log('Could not find nav element or .door div');
     }
-});
-
-// Add a touch event listener to the .door div to open/close the nav
-doorDiv.addEventListener('touchend', function(event) {
-    if (nav.classList.contains('open')) {
-        nav.classList.remove('open');
-    } else {
-        nav.classList.add('open');
-    }
-    event.preventDefault();
-    event.stopPropagation();
-});
-
-// Add a touch event listener to the nav to stop event propagation
-nav.addEventListener('touchend', function(event) {
-    event.stopPropagation();
-});
-
-// Add a touch event listener to the body to close the nav
-document.body.addEventListener('touchend', function() {
-    nav.classList.remove('open');
 });
