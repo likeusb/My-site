@@ -38,9 +38,6 @@ var nav = document.querySelector('nav');
 var doorDiv = document.querySelector('.door');
 
 document.addEventListener('DOMContentLoaded', function() {
-    var nav = document.querySelector('nav');
-    var doorDiv = document.querySelector('.door');
-
     if (nav && doorDiv) {
         // Add a click event listener to the .door div to open/close the nav
         doorDiv.addEventListener('click', function(event) {
