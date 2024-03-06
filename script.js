@@ -60,11 +60,23 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-doorDiv.addEventListener('click', function(event) {
+// Add a touch event listener to the .door div to open/close the nav
+doorDiv.addEventListener('touchend', function(event) {
     if (nav.classList.contains('open')) {
         nav.classList.remove('open');
     } else {
         nav.classList.add('open');
     }
+    event.preventDefault();
     event.stopPropagation();
+});
+
+// Add a touch event listener to the nav to stop event propagation
+nav.addEventListener('touchend', function(event) {
+    event.stopPropagation();
+});
+
+// Add a touch event listener to the body to close the nav
+document.body.addEventListener('touchend', function() {
+    nav.classList.remove('open');
 });
