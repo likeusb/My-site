@@ -50,15 +50,15 @@ document.addEventListener('DOMContentLoaded', function() {
             nav.classList.remove('open');
         });
 
-        // Add a touch event listener to the .door div to open/close the nav
-        doorDiv.addEventListener('touchend', function(event) {
+        // Add a touchstart event listener to the .door div to open/close the nav
+        doorDiv.addEventListener('touchstart', function(event) {
             nav.classList.toggle('open');
             event.preventDefault();
             event.stopPropagation();
         });
 
-        // Add a touch event listener to the body to close the nav
-        document.body.addEventListener('touchend', function() {
+        // Add a touchstart event listener to the body to close the nav
+        document.body.addEventListener('touchstart', function() {
             nav.classList.remove('open');
         });
     } else {
