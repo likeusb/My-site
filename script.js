@@ -41,17 +41,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (nav && doorDiv) {
         // Add a click event listener to the .door div to open/close the nav
         doorDiv.addEventListener('click', function(event) {
+            console.log('doorDiv click event triggered');
             nav.classList.toggle('open');
             event.stopPropagation();
         });
 
         // Add a click event listener to the body to close the nav
         document.body.addEventListener('click', function() {
+            console.log('body click event triggered');
             nav.classList.remove('open');
         });
 
         // Add a touchstart event listener to the .door div to open/close the nav
         doorDiv.addEventListener('touchstart', function(event) {
+            console.log('doorDiv touchstart event triggered');
             nav.classList.toggle('open');
             event.preventDefault();
             event.stopPropagation();
@@ -59,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Add a touchstart event listener to the body to close the nav
         document.body.addEventListener('touchstart', function() {
+            console.log('body touchstart event triggered');
             nav.classList.remove('open');
         });
     } else {
