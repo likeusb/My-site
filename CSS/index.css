@@ -29,5 +29,9 @@ figcaption {
 
         gap: 5rem;
     }    
+
+    h6 {
+        text-align: center;
+    }
 }
 
