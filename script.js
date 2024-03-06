@@ -59,3 +59,12 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Could not find nav element or .door div');
     }
 });
+
+doorDiv.addEventListener('click', function(event) {
+    if (nav.classList.contains('open')) {
+        nav.classList.remove('open');
+    } else {
+        nav.classList.add('open');
+    }
+    event.stopPropagation();
+});
