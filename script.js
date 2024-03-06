@@ -51,8 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
             event.stopPropagation();
         });
 
-        document.body.addEventListener('touchstart', function() {
-            nav.classList.remove('open');
+        document.body.addEventListener('touchstart', function(event) {
+            // Check if the target of the event is the .door div
+            if (event.target !== doorDiv) {
+                nav.classList.remove('open');
+            }
         });
     }
 });
