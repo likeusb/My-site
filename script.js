@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (nav && doorDiv) {
         doorDiv.addEventListener('click', function(event) {
             nav.classList.toggle('open');
+            event.stopPropagation();
         });
 
         document.body.addEventListener('click', function(event) {
@@ -49,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         doorDiv.addEventListener('touchstart', function(event) {
             nav.classList.toggle('open');
+            event.stopPropagation();
         });
 
         document.body.addEventListener('touchstart', function(event) {
