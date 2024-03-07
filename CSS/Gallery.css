@@ -75,8 +75,6 @@ nav .menu:hover .menu_dropdown {
     .Pagenav {
         width: 100%;
         border-radius: 0;
-
-        height: 10rem;
     }
 }
 
@@ -93,6 +91,8 @@ nav .menu:hover .menu_dropdown {
         flex-direction: column;
         align-items: center;
         justify-items: center;
+
+        padding: 2rem 0;
     }
 }
 
