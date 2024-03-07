@@ -75,6 +75,8 @@ nav .menu:hover .menu_dropdown {
     .Pagenav {
         width: 100%;
         border-radius: 0;
+        
+        padding: 2rem 0;
     }
 }
 
@@ -92,7 +94,6 @@ nav .menu:hover .menu_dropdown {
         align-items: center;
         justify-items: center;
 
-        padding: 2rem 0;
     }
 }
 
