@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (nav && doorDiv) {
         doorDiv.addEventListener('click', function(event) {
             nav.classList.toggle('open');
+            event.stopPropagation();
         });
 
         document.body.addEventListener('click', function(event) {
@@ -48,28 +49,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        doorDiv.addEventListener('touchstart', function(event) {
+        document.body.addEventListener('touchstart', function(event) {
             startX = event.touches[0].clientX;
         });
 
-        doorDiv.addEventListener('touchmove', function(event) {
+        document.body.addEventListener('touchmove', function(event) {
             endX = event.touches[0].clientX;
         });
 
-        doorDiv.addEventListener('touchend', function(event) {
-            // Check if a swipe from left to right occurred
-            if (endX - startX > 100) {
-                nav.classList.add('open');
-            }
-            // Check if a swipe from right to left occurred
-            else if (startX - endX > 100) {
-                nav.classList.remove('open');
-            }
-        });
-
-        document.body.addEventListener('touchstart', function(event) {
+        document.body.addEventListener('touchend', function(event) {
+            // Check if the target of the event is the .door div or a descendant of it
             if (!doorDiv.contains(event.target)) {
-                nav.classList.remove('open');
+                // Check if a swipe from left to right occurred
+                if (endX - startX > 100 && startX < 50) {
+                    nav.classList.add('open');
+                }
+                // Check if a swipe from right to left occurred
+                else if (startX - endX > 100 && startX < 200) {
+                    nav.classList.remove('open');
+                }
             }
         });
     }
