@@ -140,6 +140,12 @@ html {
     scroll-padding-top: 7rem;
 }
 
+@media screen and (orientation: portrait) {
+    html {
+        scroll-padding-top: 10rem;
+    }
+}
+
 @media screen and (orientation: landscape) {
     nav {
         background-color: var(--bg-sec);

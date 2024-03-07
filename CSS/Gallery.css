@@ -75,6 +75,8 @@ nav .menu:hover .menu_dropdown {
     .Pagenav {
         width: 100%;
         border-radius: 0;
+
+        height: 10rem;
     }
 }
 
