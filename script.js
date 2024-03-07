@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
-        doorDiv.addEventListener('touchstart', function(event) {
+        doorDiv.addEventListener('touchend', function(event) {
             nav.classList.toggle('open');
         });
 
-        document.body.addEventListener('touchstart', function(event) {
+        document.body.addEventListener('touchend', function(event) {
             // Check if the target of the event is the .door div or a descendant of it
             if (!doorDiv.contains(event.target)) {
                 nav.classList.remove('open');
