@@ -33,11 +33,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 var nav = document.querySelector('nav');
 var doorDiv = document.querySelector('.door');
+var touchEnded = false;
 
 document.addEventListener('DOMContentLoaded', function() {
     if (nav && doorDiv) {
         doorDiv.addEventListener('click', function(event) {
-            nav.classList.toggle('open');
+            if (!touchEnded) {
+                nav.classList.toggle('open');
+            }
+            touchEnded = false; // Reset the flag
         });
 
         document.body.addEventListener('click', function(event) {
@@ -48,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         doorDiv.addEventListener('touchend', function(event) {
+            touchEnded = true; // Set a flag to indicate that a touchend event occurred
             nav.classList.toggle('open');
         });
 
