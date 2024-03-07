@@ -33,6 +33,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 var nav = document.querySelector('nav');
 var doorDiv = document.querySelector('.door');
+var startX = 0;
+var endX = 0;
 
 document.addEventListener('DOMContentLoaded', function() {
     if (nav && doorDiv) {
@@ -41,18 +43,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 
         document.body.addEventListener('click', function(event) {
-            // Check if the target of the event is the .door div or a descendant of it
             if (!doorDiv.contains(event.target)) {
                 nav.classList.remove('open');
             }
         });
 
         doorDiv.addEventListener('touchstart', function(event) {
-            nav.classList.toggle('open');
+            startX = event.touches[0].clientX;
+        });
+
+        doorDiv.addEventListener('touchmove', function(event) {
+            endX = event.touches[0].clientX;
+        });
+
+        doorDiv.addEventListener('touchend', function(event) {
+            // Check if a swipe from left to right occurred
+            if (endX - startX > 100) {
+                nav.classList.add('open');
+            }
+            // Check if a swipe from right to left occurred
+            else if (startX - endX > 100) {
+                nav.classList.remove('open');
+            }
         });
 
         document.body.addEventListener('touchstart', function(event) {
-            // Check if the target of the event is the .door div or a descendant of it
             if (!doorDiv.contains(event.target)) {
                 nav.classList.remove('open');
             }
