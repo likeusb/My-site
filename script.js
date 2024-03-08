@@ -41,23 +41,21 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!touchEnded) {
                 nav.classList.toggle('open');
             }
-            touchEnded = false; // Reset the flag
+            touchEnded = false;
         });
 
         document.body.addEventListener('click', function(event) {
-            // Check if the target of the event is the .door div or a descendant of it
             if (!doorDiv.contains(event.target)) {
                 nav.classList.remove('open');
             }
         });
 
         doorDiv.addEventListener('touchend', function(event) {
-            touchEnded = true; // Set a flag to indicate that a touchend event occurred
+            touchEnded = true;
             nav.classList.toggle('open');
         });
 
         document.body.addEventListener('touchend', function(event) {
-            // Check if the target of the event is the .door div or a descendant of it
             if (!doorDiv.contains(event.target)) {
                 nav.classList.remove('open');
             }
