@@ -82,6 +82,18 @@ h6 {
 a {
     color: var(--font-prim);
     text-decoration: none;
+
+    background: linear-gradient(var(--font-acc) 0 0) 
+    bottom center/
+    var(--underline-width, 0%) 0.2rem
+    no-repeat;
+    
+    transition: background 0.25s ease-in-out;
+}
+
+a:hover {
+    color: var(--font-acc);
+    --underline-width:100%
 }
 
 p {

@@ -2,7 +2,7 @@ figure {
     display: flex;
     align-items: center;
 
-    gap: 4rem;
+    gap: 16rem;
 
     height: max-content;
 }
