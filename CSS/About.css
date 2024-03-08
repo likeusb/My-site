@@ -1,8 +1,13 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16rem;
+}
+
 figure {
     display: flex;
     align-items: center;
-
-    gap: 16rem;
 
     height: max-content;
 }
