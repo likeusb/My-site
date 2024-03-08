@@ -22,6 +22,7 @@
 
     --font-prim: rgb(255, 255, 255);
     --font-acc: rgb(65, 255, 113);
+    --fomt-warn: rgb(255, 65, 65);
 
     --select-bg: rgb(70, 70, 70);
     --select-text: rgb(169, 255, 169);
@@ -39,6 +40,7 @@
 
     --font-prim: rgb(0, 0, 0);
     --font-acc: rgb(0, 163, 41);
+    --fomt-warn: rgb(194, 0, 0);
 }
 
 h1,
@@ -138,6 +140,10 @@ p::selection {
 
 .Accent {
     color: var(--font-acc);
+}
+
+.Warning {
+    color: var(--fomt-warn);
 }
 
 body {
