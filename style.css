@@ -321,6 +321,7 @@ html {
         display: flex;
         flex-direction: column;
         gap: 4rem;
+        padding: 0 2rem;
     }
 
     nav ul li {
