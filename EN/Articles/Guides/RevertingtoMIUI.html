@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="darkreader-lock">
+    <meta name="title" content="Linas Photography">
+    <meta name="description" content="Great photos. Well-coded websites.">
+    <meta name="og:title" content="Linas Photography">
+    <meta name="og:description" content="Great photos. Well-coded websites.">
+    <meta name="og:image" content="../../../Images/Best Work Images/SLR.jpg">
+    <meta name="twitter:title" content="Linas Photography">
+    <meta name="twitter:description" content="Great photos. Well-coded websites.">
+    <meta name="twitter:image" content="../../../Images/Best Work Images/SLR.jpg">
+    <title>Linas | Reverting to MIUI</title>
+    <link rel="stylesheet" href="../../../style.css?v=10.0.0">
+    <link rel="stylesheet" href="../../../CSS/Reviews/Article.css?v=10.0.0">
+    <link rel="icon" href="../../../Images/logo.png">
+</head>
+<body>
+    <nav>
+        <div class="door">
+            <img src="../../../Images/SVGs/menu.svg">
+        </div>
+        <img src="../../../Images/logo.png" class="logo">
+        <h2>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../Gallery.html">Gallery</a></li>
+                <li><a href="../../About.html">About</a></li>
+                <li><a href="../../Contact.html">Contacts</a></li>
+                <li><a href="../index.html">Articles</a></li>
+            </ul>
+        </h2>
+        <div class="menu">
+            <img src="../../../Images/SVGs/settings.svg" alt="" id="settings">
+            <div class="menu_dropdown">
+                <div class="ThemeToggle">
+                    <img src="../../../Images/SVGs/moon.svg" alt="" id="Moon">
+                    <img src="../../../Images/SVGs/sun.svg" alt="" id="Sun">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <h1 class="Accent">Reverting to MIUI</h1>
+        <p>
+            So you found an unfixable issue, found no use in a Custom ROM, or are trying to troubleshoot a problem and you want to start from scratch to fix possible issues. This guide will help you do just that!
+        </p>
+        <h2>Prerequisites</h2>
+        <ul>
+            <li>Phone, computer with ADB drivers, USB cable to connect the two</li>
+            <li>Mi Flash tool - Download: <a href="https://1drv.ms/f/s!AjFrz9WguuzzheNFf4bh6jIje5etPg?e=M7t92c">here</a></li>
+            <li>Your phone’s respective fastboot ROM file <span class="Warning">[CAUTION] <b><i>You will lock the bootloader, DO NOT get the wrong file under any circumstances. This will irreversibly break your phone.</i></b></span></li>
+        </ul>
+        <h2>Steps</h2>
+        <ul>
+            <li>Extract the .tgz (or whatever else format <span class="Warning">***FASTBOOT***</span> ROM you have) in advance</li>
+            <li>Connect computer to phone via USB</li>
+            <li>Open Mi Flash Tool</li>
+            <li>Put phone into fastboot</li>
+            <li>Download necessary drivers via Mi Flash Tool</li>
+            <li>Select the folder that you extracted from the archive</li>
+            <li>Select flash_all_lock in the bottom right</li>
+            <li>Click flash</li>
+            <li>As a sidenote, if there’s an error and it says that a folder is missing, that would be the log folder, make one in the Mi Flash Tool folder. Though with the OneDrive link I’ve included, you should be fine</li>
+            <li>Pray</li>
+            <li>Once it is done, reboot into MIUI</li>
+        </ul>
+        <p>
+            And congrats! You are now ready to lock the bootloader by going to Options>Advanced Options>Developer options (when enabled by clicking MIUI version in About phone numerous times) and locking it by toggling OEM Unlocking to off.
+        </p>
+    </main>
+    <script src="../../../script.js?v=10.0.0"></script>
+</body>
+</html>

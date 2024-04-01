@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="darkreader-lock">
+    <meta name="title" content="Linas Photography">
+    <meta name="description" content="Great photos. Well-coded websites.">
+    <meta name="og:title" content="Linas Photography">
+    <meta name="og:description" content="Great photos. Well-coded websites.">
+    <meta name="og:image" content="../../../Images/Best Work Images/SLR.jpg">
+    <meta name="twitter:title" content="Linas Photography">
+    <meta name="twitter:description" content="Great photos. Well-coded websites.">
+    <meta name="twitter:image" content="../../../Images/Best Work Images/SLR.jpg">
+    <title>Linas | Custom ROM installation</title>
+    <link rel="stylesheet" href="../../../style.css?v=10.0.0">
+    <link rel="stylesheet" href="../../../CSS/Reviews/Article.css?v=10.0.0">
+    <link rel="icon" href="../../../Images/logo.png">
+</head>
+<body>
+    <nav>
+        <div class="door">
+            <img src="../../../Images/SVGs/menu.svg">
+        </div>
+        <img src="../../../Images/logo.png" class="logo">
+        <h2>
+            <ul>
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../Gallery.html">Gallery</a></li>
+                <li><a href="../../About.html">About</a></li>
+                <li><a href="../../Contact.html">Contacts</a></li>
+                <li><a href="../index.html">Articles</a></li>
+            </ul>
+        </h2>
+        <div class="menu">
+            <img src="../../../Images/SVGs/settings.svg" alt="" id="settings">
+            <div class="menu_dropdown">
+                <div class="ThemeToggle">
+                    <img src="../../../Images/SVGs/moon.svg" alt="" id="Moon">
+                    <img src="../../../Images/SVGs/sun.svg" alt="" id="Sun">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main>
+        <h1 class="Accent">Custom ROM installation</h1>
+        <p>
+            So, you want a custom ROM, but you have no idea how they work and you are confused. It’s fine - we’ve all been there. This guide will hopefully help you install one!<br><br>
+            <span class="Warning">
+                Installing a Custom ROM is a dangerous process that, if done wrong, can easily turn your phone into a doorstop. Don’t do this if you aren’t comfortable with the occasional instability or odd problem with no solution. Also, banking apps WILL break unless you use some special tools to successfully hide the unlocked and rooted status of your phone from apps.<br><Br>
+                I am also not responsible for any mistakes you made that I explicitly warned not to.
+            </span><br><br>
+            Also, remember to <b><i>Back up your data BEFORE unlocking</i></b>
+        </p>
+        <p>Let’s begin with the tools you will need:</p>
+        <ul>
+            <li>A computer with ADB Drivers installed - <a href="https://androidmtk.com/download-minimal-adb-and-fastboot-tool">Download Minimal ADB and Fastboot Tool (all versions) (androidmtk.com)</a></li>
+            <li>The phone</li>
+            <li>A USB cable to connect the two</li>
+            <li>Recovery installer - <a href="https://1drv.ms/f/s!AjFrz9WguuzzheM-q8ggz_TdKa4A6g?e=0LJaG6">Download recovery installer (Onedrive)</a> Note: Will not work if your device isn't in the same category (Dedicated recovery, non-A/B Partition) as the Redmi Note 10 Pro (Marked as Sweet in the list) in <a href="https://xiaomi.eu/community/threads/installing-a-custom-recovery.67841/">This list.</a></li>
+            <li>ROM - NEEDS TO BE SPECIFICALLY FOR YOUR DEVICE. <span class="Warning"><b><i>DO NOT INSTALL A ROM OR RECOVERY NOT FOR YOUR DEVICE.</i></b></span>
+                <ul>
+                    <li>ROM .zip</li>
+                    <li>ROM Recovery (Find which one you need)</li>
+                </ul>
+            </li>
+            <li>Mi Unlock Tool - <a href="https://1drv.ms/f/s!AjFrz9WguuzzheM8I0eOce9oX-nhmg?e=NftUFK">Download Mi Unlock Tool (OneDrive)</a></li>
+        </ul>
+        <p>First, we will unlock the phone.</p>
+        <ul>
+            <li>This will vary UI to UI, so I will share how to do it on MIUI. First, go to Settings>About Phone, then tap the MIUI version button until it says “You are now a developer.”</li>
+            <li>Then, go to Settings>Additional Settings>Developer Options, here, scroll down and enable OEM Unlocking and USB Debugging.</li>
+            <li>Open up Mi Unlock Tool and log in, do this now as you won’t be able to later.</li>
+            <li>Connect your phone via USB to your laptop and boot into Fastboot by holding down Power button and Volume down.</li>
+            <li>Go through the unlocking steps shown</li>
+        </ul>
+        <p>
+            If done right, it should either show that you can unlock the phone in 168 hours, or some other duration, or show that your phone is unlocked.<br><br>
+            No need to boot back into MIUI or whatever OS you have, we will immediately install a recovery:
+        </p>
+        <ul>
+            <li>Keep your phone in Fastboot</li>
+            <li>Get the recovery .img from the ROM site, most common ones are OrangeFox and KewL TWRP. Some ROMs require you use a specific recovery, so use that.</li>
+            <li>Put the .img file in the same folder as your recovery installer and make sure it is named “recovery.img”</li>
+            <li>Run the .bat file to install a custom recovery</li>
+            <li>If it’s a success, you will be able to boot into recovery</li>
+        </ul>
+        <p>If you’ve made it this far, good job! Let’s continue with installing the ROM</p>
+        <ul>
+            <li>Get the ROM .zip file</li>
+            <li>OrangeFox</li>
+            <ul>
+                <li>First, wipe all data. Go to the trash can icon and select every checkbox. Then, swipe to wipe. This WILL delete all data.</li>
+                <li>On the bottom navbar, go to the menu (Hamburger icon), select ADB Sideload, activate sideload.</li>
+                <li>On the computer, navigate to the folder via Command Prompt by doing cd and inputting the folder path. For example, if the adb install folder is on your C drive and is called “adb”, you would type “cd C:\adb”</li>
+                <li>Type “adb sideload “ (With the space) and drop the zip file of the ROM, should look like this “adb sideload romfilename.zip”, if so, press enter.</li>
+                <li>After it is done sideloading, go back to the wipe data menu, this time wipe cache and dalvik unless instructed otherwise by the install instructions of the ROM.</li>
+            </ul>
+            <li>TWRP:</li>
+            <ul>
+                <li>First, wipe all data. In the main menu, go to Wipe, then Advanced Wipe, select every checkbox, swipe to wipe. This WILL delete all data.</li>
+                <li>In main menu, go to Advanced and ADB Sideload. Activate sideload.</li>
+                <li>On the computer, navigate to the folder via Command Prompt by doing cd and inputting the folder path. For example, if the adb install folder is on your C drive and is called “adb”, you would type “cd C:\adb”</li>
+                <li>Type “adb sideload “ (With the space) and drop the zip file of the ROM, should look like this “adb sideload romfilename.zip”, if so, press enter.</li>
+                <li>After it is done sideloading, swipe “Clear cache and dalvik”, unless instructed otherwise by the install instructions of the ROM.</li>
+                <li>Reboot to system</li>
+            </ul>
+        </ul>
+        <p>
+            Note: These are exclusively for TWRP and OrangeFox. Some recoveries are special and work in a different way. Check the forum/site for instructions on how to install ROM.<br><br>
+            Optional and recommended: Sideload and install Magisk, it will help fix Safetynet, but it might take some work. To install, it’s the same process as for a Custom ROM. This varies ROM to ROM and device to device, so I can’t give a proper guide for that.<br><br>
+            And that’s all, you now have a custom ROM on your phone, enjoy!        
+        </p>
+    </main>
+    <script src="../../../script.js?v=10.0.0"></script>
+    </body>
+</html>

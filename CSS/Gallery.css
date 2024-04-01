@@ -182,61 +182,6 @@ figure img.vertical {
     }
 }
 
-.figimgwrapper {
-    position: relative;
-}
-
-.tooltip {
-    position: absolute;
-    right: 0;
-    top: 0;
-
-    height: 100%;
-    max-width: 40rem;
-
-    display: flex;
-    align-items: center;
-
-    transform: scale(0) translateX(100%);
-    transition: transform 0.3s ease;
-    transform-origin: left center;
-
-    padding: 0 0 0 4rem;
-}
-
-.figimgwrapper:hover .tooltip {
-    transform: scale(1) translateX(100%);
-}
-
-.tooltip p {
-    background-color: var(--bg-tetr);
-
-    position: relative;
-    padding: 2rem;
-
-    border-radius: 2rem;
-}
-
-.tooltip p::before {
-    --hintsize: 4rem;
-
-    position: absolute;
-    left: 0;
-
-    background-color: var(--bg-tetr);
-
-    width: var(--hintsize);
-    height: var(--hintsize);
-
-    top: 50%;
-    transform: translateX(-50%) rotate(45deg) translateY(-50%);
-    vertical-align: middle;
-
-    content: '';
-
-    z-index: -1;
-}
-
 figcaption {
     display: flex;
     flex-direction: column;
@@ -247,4 +192,9 @@ figcaption h1,
 figcaption p {
     text-align: center;
     text-wrap: balance;
+}
+
+p.codingpart {
+    box-sizing: border-box;
+    padding: 0 4rem;
 }

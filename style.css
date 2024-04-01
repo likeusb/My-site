@@ -22,10 +22,11 @@
 
     --font-prim: rgb(255, 255, 255);
     --font-acc: rgb(65, 255, 113);
-    --fomt-warn: rgb(255, 65, 65);
+    --font-warn: rgb(255, 65, 65);
 
     --select-bg: rgb(70, 70, 70);
     --select-text: rgb(169, 255, 169);
+    --select-warn-text: rgb(255, 169, 169);
 }
 
 [data-theme="light"] {
@@ -40,7 +41,7 @@
 
     --font-prim: rgb(0, 0, 0);
     --font-acc: rgb(0, 163, 41);
-    --fomt-warn: rgb(194, 0, 0);
+    --font-warn: rgb(194, 0, 0);
 }
 
 h1,
@@ -93,9 +94,20 @@ a {
     transition: background 0.25s ease-in-out;
 }
 
+a.Warning {
+    background: linear-gradient(var(--font-warn) 0 0)
+    bottom center/
+    var(--underline-width, 0%) 0.2rem
+    no-repeat;
+}
+
 a:hover {
     color: var(--font-acc);
     --underline-width:100%
+}
+
+a.Warning:hover {
+    color: var(--font-warn);
 }
 
 p {
@@ -128,14 +140,22 @@ p {
     }
 }
 
+h1::selection,
 h2::selection,
+h3::selection,
 h4::selection,
 h5::selection,
 h6::selection,
 a::selection,
-p::selection {
+p::selection
+.Accent::selection {
     background-color: var(--select-bg);
     color: var(--select-text);
+}
+
+.Warning::selection {
+    background-color: var(--select-bg);
+    color: var(--select-warn-text);
 }
 
 .Accent {
@@ -143,7 +163,11 @@ p::selection {
 }
 
 .Warning {
-    color: var(--fomt-warn);
+    color: var(--font-warn);
+}
+
+.nounderline {
+    background: none;
 }
 
 body {
@@ -290,6 +314,10 @@ html {
 
     nav.open {
         transform: translateX(0);
+    }
+
+    nav.close {
+        transform: translateX(-100%);
     }
 
     nav .door {
