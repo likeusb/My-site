@@ -29,14 +29,6 @@ h3 {
     
 }
 
-nav .menu_dropdown {
-    transform: translate(0, 100%) scale(0);
-}
-
-nav .menu:hover .menu_dropdown {
-    transform: translate(0, 100%) scale(1);
-}
-
 .PNContainer {
     display: flex;
     justify-content: center;
