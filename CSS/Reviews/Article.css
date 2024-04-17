@@ -67,7 +67,7 @@ ul {
     background-color: var(--bg-sec);
     width: max-content;
     align-self: flex-start;
-    padding: 0.75rem 1rem 1rem 1rem;
+    padding: 0 0.5rem;
     border-radius: 1rem;
     margin-top: -2rem;
     margin-bottom: 4rem;
