@@ -40,6 +40,15 @@ td {
     padding: 1.5rem;
 }
 
+th {
+    font-size: clamp(2rem, 1.5dvw, 3.75rem);
+    font-weight: 400;
+}
+
+td {
+    font-size: clamp(2rem, 1.25dvw, 4rem);
+}
+
 
 .Counter {
     list-style-type: none;
@@ -63,6 +72,10 @@ ul {
     align-self: flex-start;
 }
 
+p {
+    margin: 1rem 0;
+}
+
 .Date {
     background-color: var(--bg-sec);
     width: max-content;
@@ -77,10 +90,6 @@ ul {
     filter: invert(1);
     height: 40%;
     margin-right: 2rem;
-}
-
-p {
-    margin: 1rem 0;
 }
 
 .Comparison {
