@@ -140,19 +140,6 @@ p {
     }
 }
 
-h1::selection,
-h2::selection,
-h3::selection,
-h4::selection,
-h5::selection,
-h6::selection,
-a::selection,
-p::selection
-.Accent::selection {
-    background-color: var(--select-bg);
-    color: var(--select-text);
-}
-
 .Warning::selection {
     background-color: var(--select-bg);
     color: var(--select-warn-text);
