@@ -82,6 +82,7 @@ html {
 body {
     min-height: 100vh;
     position: relative;
+    text-wrap: balance;
 }
 
 nav {
@@ -141,6 +142,9 @@ main {
     box-sizing: border-box;
     padding: 12.5rem 20% 10rem 20%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
 }
 
 footer {
