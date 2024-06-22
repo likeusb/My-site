@@ -15,7 +15,7 @@
     border-radius: 2rem;
 }
 
-.mtt {
+div {
     display: flex;
     flex-direction: column;
     gap: 4rem;

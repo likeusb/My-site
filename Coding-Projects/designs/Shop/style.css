@@ -140,7 +140,7 @@ p {
 
 main {
     box-sizing: border-box;
-    padding: 12.5rem 20% 10rem 20%;
+    padding: 12.5rem 20% 14rem 20%;
     position: relative;
     display: flex;
     flex-direction: column;
