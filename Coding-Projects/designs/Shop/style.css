@@ -170,3 +170,7 @@ footer ul {
     flex-direction: column;
     gap: 1rem;
 }
+
+.mat {
+    text-align: center;
+}

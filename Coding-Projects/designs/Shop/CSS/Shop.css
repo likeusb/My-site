@@ -1,0 +1,28 @@
+.topnav {
+    background-color: antiquewhite;
+    height: 5rem;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.product {
+    background-color: aqua;
+    height: 35rem;
+}
+
+.product img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+    background-color: antiquewhite;
+}
+
+.lrsplit {
+    display: flex;
+    justify-content: space-between;
+}

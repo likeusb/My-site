@@ -57,10 +57,6 @@ main {
     transform: translateX(-350%);
 }
 
-.mat {
-    text-align: center;
-}
-
 .prodcats {
     height: 50rem;
     display: grid;
