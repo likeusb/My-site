@@ -16,13 +16,6 @@ function updateProduct(id, product) {
     return knex("products").where("id", id).update(product);
 }
 
-module.exports = {
-    createProduct,
-    getProducts,
-    deleteProduct,
-    updateProduct
-};
-
 function getProductsCount() {
     return knex('products').count({ count: '*' }).then(rows => rows[0].count);
 }
@@ -32,5 +25,5 @@ module.exports = {
     getProducts,
     deleteProduct,
     updateProduct,
-    getProductsCount // Add this line to export the new function
+    getProductsCount
 };

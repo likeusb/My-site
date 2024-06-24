@@ -29,8 +29,17 @@ app.post("/products", async (req, res) => {
 });
 
 app.get("/products", async (req, res) => {
-    const products = await db.getProducts();
-    res.status(200).json({ products });
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 40;
+    const offset = (page - 1) * limit;
+
+    try {
+        const products = await db.getProducts(limit, offset);
+        res.status(200).json({ products });
+    } catch (error) {
+        console.error('Error fetching products:', error);
+        res.status(500).json({ error: "Failed to fetch products" });
+    }
 });
 
 app.patch("/products/:id", async (req, res) => {
