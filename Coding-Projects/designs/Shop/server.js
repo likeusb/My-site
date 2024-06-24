@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
-const bodyParser = require("body-parser");
 const db = require("./db/shop");
+const port = 1337;
+const { getProductsCount } = require('./db/shop');
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
@@ -9,8 +13,15 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+app.get('/api/products/count', async (req, res) => {
+    try {
+        const count = await getProductsCount(); // Use the imported function directly
+        res.json({ count });
+    } catch (error) {
+        console.error('Error fetching products count:', error);
+        res.status(500).json({ error: "Failed to fetch product count" });
+    }
+});
 
 app.post("/products", async (req, res) => {
     const results = await db.createProduct(req.body);
@@ -32,4 +43,4 @@ app.delete("/products/:id", async (req, res) => {
     res.status(200).json({ success: true });
 });
 
-app.listen(1337, () => console.log("Server is running on port 1337"));
+app.listen(port, () => console.log(`Server is running on port ${port}`));

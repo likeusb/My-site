@@ -22,3 +22,15 @@ module.exports = {
     deleteProduct,
     updateProduct
 };
+
+function getProductsCount() {
+    return knex('products').count({ count: '*' }).then(rows => rows[0].count);
+}
+
+module.exports = {
+    createProduct,
+    getProducts,
+    deleteProduct,
+    updateProduct,
+    getProductsCount // Add this line to export the new function
+};

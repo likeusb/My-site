@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 productElement.classList.add('product');
                 productElement.innerHTML = `
                     <img src="${product.image}" alt="${product.alt_text}">
-                    <h2>${product.product_name}</h2>
+                    <p class="title">${product.product_name}</p>
                     <div class="lrsplit">
                         <p>${product.in_stock} in stock</p>
-                        <p>${product.price}</p>
+                        <p class="price">${product.price}€</p>
                     </div>
                 `;
                 productList.appendChild(productElement);
@@ -19,3 +19,21 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .catch(error => console.error('Error fetching products:', error));
 });
+
+function fetchTotalProductsCount() {
+    return fetch('http://localhost:1337/api/products/count')
+        .then(response => response.json())
+        .then(data => data.count);
+}
+
+function updateProductCountIndicator() {
+    fetchTotalProductsCount().then(totalProducts => {
+        const perPageTotal = totalProducts < 40 ? totalProducts : 40;
+        const productCountIndicatorElement = document.getElementById('productCountIndicator');
+        if (productCountIndicatorElement) {
+            productCountIndicatorElement.textContent = `Showing ${perPageTotal} of ${totalProducts}`;
+        }
+    });
+}
+
+updateProductCountIndicator();

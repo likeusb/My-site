@@ -18,16 +18,17 @@
         </ul>
     </nav>
     <main>
-        <div class="topnav"></div>
-        <div class="products" id="products">
-            <div class="product">
-                <img src="[img src from image]" alt="[alt text from alt_text]">
-                <h2>[product name from product_name]</h2>
-                <div class="lrsplit">
-                    <p>[number from in_stock] in stock</p>
-                    <p>[price from price]</p>
-                </div>
+        <div class="topnav">
+            <div class="arrowIcon" id="leftDoubleArrow"><img src="img/SVG/shop/arrow2Left.svg" alt="Skip to first page"></div>
+            <div class="arrowIcon" id="leftSingleArrow"><img src="img/SVG/shop/arrow1Left.svg" alt="Previous page"></div>
+            <div class="productCountIndicator">
+                <p id="productCountIndicator"></p>
             </div>
+            <div class="arrowIcon" id="rightSingleArrow"><img src="img/SVG/shop/arrow1Right.svg" alt="Next page"></div>
+            <div class="arrowIcon" id="rightDoubleArrow"><img src="img/SVG/shop/arrow2Right.svg" alt="Skip to last page"></div>
+        </div>
+        <div class="products" id="products">
+            <!-- #DB fills this part in automatically -->
         </div>
     </main>
     <footer>
