@@ -37,3 +37,42 @@ function updateProductCountIndicator() {
 }
 
 updateProductCountIndicator();
+
+let currentPage = 1;
+let totalPages = 1; // Placeholder, will be updated based on total products count
+
+function updateProductsAndIndicator(page) {
+    displayProductsForPage(page);
+    updateProductCountIndicator(); // This might need adjustments to show page numbers
+}
+
+document.getElementById('leftDoubleArrow').addEventListener('click', () => {
+    currentPage = 1;
+    updateProductsAndIndicator(currentPage);
+});
+
+document.getElementById('leftSingleArrow').addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        updateProductsAndIndicator(currentPage);
+    }
+});
+
+document.getElementById('rightSingleArrow').addEventListener('click', () => {
+    if (currentPage < totalPages) {
+        currentPage++;
+        updateProductsAndIndicator(currentPage);
+    }
+});
+
+document.getElementById('rightDoubleArrow').addEventListener('click', () => {
+    currentPage = totalPages;
+    updateProductsAndIndicator(currentPage);
+});
+
+// Fetch total products count to calculate total pages
+fetchTotalProductsCount().then(totalProducts => {
+    const productsPerPage = 40;
+    totalPages = Math.ceil(totalProducts / productsPerPage);
+    updateProductsAndIndicator(currentPage); // Initial update
+});
